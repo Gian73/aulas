@@ -9,33 +9,34 @@ public class Main {
 	public static void dadosFuncionarios() {
 
 		Scanner sc = new Scanner(System.in);
-		Funcionario funcionario;
+		Funcionario funcionario = new Funcionario();
 		int opcao = 0;
 
-		System.out.println("Escolha uma opcao : {1 criar} {2 ver} ");
+		do {
 
+		System.out.println();
+		System.out.println("Escolha uma opcao : {1 criar} {2 ver} {0 sair}");
 		opcao = Integer.parseInt( sc.nextLine() );
 
-		System.out.println("chegou apos a gravacao da opcao");
-
-		do {
-		System.out.println("Entrou no  DO");
 			if ( opcao == 1 ) {
-				System.out.println("Entrou no if");
+
 				funcionario = new Funcionario();
+				System.out.println();
 				System.out.println("Digite um nome:");
 				funcionario.nome=sc.nextLine();
-				System.out.println("O funcionario digitado foi: " + funcionario.nome);
-				System.out.println("A opcao nesse momento é: " + opcao);
-				opcao = 0;
-				System.out.println("A opcao nesse momento é: " + opcao);
 
 			} else if ( opcao == 2 ) {
-				funcionario = new Funcionario();
-				System.out.println(funcionario.nome);
+				if(funcionario.nome!=null){
+					System.out.println();
+					System.out.println("Abaixo segue o nome digitado: ");
+					System.out.println(funcionario.nome);
+				}
 			}
+
 		} while ( opcao != 0 );
+
 	}
+
 }
 
 
